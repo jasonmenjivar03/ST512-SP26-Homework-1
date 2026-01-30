@@ -5,3 +5,26 @@ format: pdf
 editor: visual
 ---
 
+## Problem 1
+
+n = 36
+
+$\bar{x}$ = 23.4
+
+sd (s) = 7.2
+
+CI: $\bar{x} \pm$ t\* x SE
+
+SE = $\frac{s}{\sqrt{n}}$
+
+SE = $\frac{7.2}{\sqrt{36}}$ = 1.2
+
+t\* = qt(1-(.04/2), 36) = 2.13
+
+CI: 23.4 $\pm$ 2.13 \* 1.2
+
+96% CI: (20.84,25.96)
+
+## Problem 2 
+
+
