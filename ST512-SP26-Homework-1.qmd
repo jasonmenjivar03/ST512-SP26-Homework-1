@@ -124,11 +124,11 @@ There are 6 replications per treatment.
 
 **a**
 
-| **Source**             | **df**  | **Sum of Squares** | **Mean Squares** |
-|--------------------|-----|----------------|--------------|
-| **Between**        | 2   | 1533           | 766.6        |
-| **Within (Error)** | 20  | 6241           | 312.0        |
-| **Total**          | 22  | 7774           |              |
+| **Source**         | **df** | **Sum of Squares** | **Mean Squares** |
+|--------------------|--------|--------------------|------------------|
+| **Between**        | 2      | 1533               | 766.6            |
+| **Within (Error)** | 20     | 6241               | 312.0            |
+| **Total**          | 22     | 7774               |                  |
 
 **b**
 
@@ -139,6 +139,18 @@ F-value = 2.457
 p-value = 0.111
 
 Our null hypothesis is that the mean phosphorous content does not differ among the three varieties. Using the calculated F-value, 2.457, the p-value was calculated to be 0.111. In comparison to a standard significance level of 5%, our p-value is larger. Therefore, failing to reject the null hypothesis. I think the three varieties have the same mean phosphorous content.
+
+## Problem 6
+
+| *Source of Variation* | *df* | *SS*   | *MS*  | *F-value* | *P-value* |
+|-----------------------|------|--------|-------|-----------|-----------|
+| **Between**           | 4    | 2.281  | 0.570 | 4.32      | 0.0039    |
+| **With-in (error)**   | 60   | 7.949  | 0.132 |           |           |
+| **Total**             | 64   | 10.230 |       |           |           |
+
+Based on the ANOVA table, the calculated p-value is approximately 0.0039. The p-value is less than the significance level of 0.01, thus we reject the null hypothesis. Therefore, it appears to be a difference in means between the five diets. 
+
+
 
 ## R Code
 
@@ -165,4 +177,9 @@ value <- c(
 data <- data.frame(group, value)
 anova_model <- aov(value ~ group, data = data)
 summary(anova_model)
+```
+
+```{r}
+#problem 6 p-value 
+1-pf(4.32,4,60)
 ```
