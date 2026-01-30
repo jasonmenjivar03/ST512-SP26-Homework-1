@@ -98,6 +98,28 @@ p-value \> $\alpha$; fail to reject $H_o$
 
 There is not sufficient evidence at the 1% significance level to conclude the mean monthly sale differ between the two designs.
 
+## Problem 4 
+
+**a**
+
+This is an experimental design because the treatments are being controlled, the investigator's role is active
+
+**b**
+
+This is a randomized complete block design. 
+
+**c**
+
+i. response variable: tomato yield 
+
+ii. factor: fertilizer application rate 
+
+iii. treatments: 3, 5, and 7 units/acre 
+
+**d**
+
+There are 6 replications per treatment. 
+
 ## R Code
 
 ```{r}
