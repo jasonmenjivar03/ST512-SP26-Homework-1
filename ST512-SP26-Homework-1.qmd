@@ -50,3 +50,30 @@ p-value = pt(t.value, df) = 0.033
 p-value \< $\alpha$, we reject $H_o$
 
 Therefore, there is sufficient evidence at the 5% confidence interval to conclude that the newly developed pain reliever delivers perceptible pain relief more quickly than the standard pain reliever.
+
+## Problem 3
+
+|              |          |          |
+|--------------|----------|----------|
+|              | Design 1 | Design 2 |
+| $n_i$        | 11       | 6        |
+| $\bar{y}_i.$ | 52       | 46       |
+| sd           | 12       | 10       |
+
+**a**
+
+point estimate: $\hat{\mu_1 - \mu_2}$ = $\bar{y}_1.$ - $\bar{y}_2.$ = 52 - 46 = 6
+
+95% CI: ($\bar{y}_1.$ - $\bar{y}_2.$) $\pm$ t\* x SE
+
+SE = $\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$ = $\sqrt{\frac{12^2}{11}+\frac{10^2}{6}}$ = 5.455
+
+df = $n_1 + n_2$ - 2 = 15 ; assuming equal variance
+
+t\* = qt(0.975,15) = 2.13
+
+95% CI: 6 $\pm$ 2.13 \* 5.455
+
+95% CI: (-5.62, 17.62)
+
+
