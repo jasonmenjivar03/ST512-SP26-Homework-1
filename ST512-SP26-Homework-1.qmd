@@ -1,0 +1,7 @@
+---
+title: "ST512-SP26-Homework-1"
+author: Jason Menjivar-Hernandez
+format: pdf
+editor: visual
+---
+
