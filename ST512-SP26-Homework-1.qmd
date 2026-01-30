@@ -98,7 +98,7 @@ p-value \> $\alpha$; fail to reject $H_o$
 
 There is not sufficient evidence at the 1% significance level to conclude the mean monthly sale differ between the two designs.
 
-## Problem 4 
+## Problem 4
 
 **a**
 
@@ -106,19 +106,39 @@ This is an experimental design because the treatments are being controlled, the 
 
 **b**
 
-This is a randomized complete block design. 
+This is a randomized complete block design.
 
 **c**
 
-i. response variable: tomato yield 
+i.  response variable: tomato yield
 
-ii. factor: fertilizer application rate 
+ii. factor: fertilizer application rate
 
-iii. treatments: 3, 5, and 7 units/acre 
+iii. treatments: 3, 5, and 7 units/acre
 
 **d**
 
-There are 6 replications per treatment. 
+There are 6 replications per treatment.
+
+## Problem 5
+
+**a**
+
+| **Source**             | **df**  | **Sum of Squares** | **Mean Squares** |
+|--------------------|-----|----------------|--------------|
+| **Between**        | 2   | 1533           | 766.6        |
+| **Within (Error)** | 20  | 6241           | 312.0        |
+| **Total**          | 22  | 7774           |              |
+
+**b**
+
+Refer to R code at end for these values:
+
+F-value = 2.457
+
+p-value = 0.111
+
+Our null hypothesis is that the mean phosphorous content does not differ among the three varieties. Using the calculated F-value, 2.457, the p-value was calculated to be 0.111. In comparison to a standard significance level of 5%, our p-value is larger. Therefore, failing to reject the null hypothesis. I think the three varieties have the same mean phosphorous content.
 
 ## R Code
 
@@ -130,4 +150,19 @@ pt(-1.887,49) #problem 2
 qt(0.975,15) #problem 3.a
 
 2*(1-pt(1.04,15)) #problem 3.b
+```
+
+```{r}
+# problem 5 r-code 
+group <- factor(c(rep("A",8), rep("B",8), rep("C",7)))
+
+value <- c(
+  rep(72 + sqrt((8-1)*312/8), 4), rep(72 - sqrt((8-1)*312/8), 4),
+  rep(68 + sqrt((8-1)*310/8), 4), rep(68 - sqrt((8-1)*310/8), 4),
+  rep(55 + sqrt((7-1)*321/7), 3), rep(55 - sqrt((7-1)*321/7), 4)
+)
+
+data <- data.frame(group, value)
+anova_model <- aov(value ~ group, data = data)
+summary(anova_model)
 ```
