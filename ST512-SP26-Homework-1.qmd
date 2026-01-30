@@ -25,6 +25,28 @@ CI: 23.4 $\pm$ 2.13 \* 1.2
 
 96% CI: (20.84,25.96)
 
-## Problem 2 
+## Problem 2
 
+$H_o : \mu = 3.5$
 
+$H_A: \mu < 3.5$
+
+Will be conducting a left-tailed test because we want to know if the drug delivers relief faster (i.e., less than 3.5 minutes).
+
+n = 50
+
+$\bar{x}$ = 3.1
+
+s = 1.5
+
+$\alpha$ = 0.05
+
+SE = $\frac{s}{\sqrt{n}} = \frac{1.5}{\sqrt{50}}$ = 0.212
+
+t-stat = $\frac{\bar{x}-\mu_o}{SE}$ = $\frac{-0.4}{0.212}$ = -1.887
+
+p-value = pt(t.value, df) = 0.033
+
+p-value \< $\alpha$, we reject $H_o$
+
+Therefore, there is sufficient evidence at the 5% confidence interval to conclude that the newly developed pain reliever delivers perceptible pain relief more quickly than the standard pain reliever.
