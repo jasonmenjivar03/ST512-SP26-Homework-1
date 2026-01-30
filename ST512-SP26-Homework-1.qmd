@@ -83,3 +83,29 @@ t\* = qt(0.975,15) = 2.13
 95% CI: (-6.31, 18.31)
 
 **b**
+
+$H_o: \mu_1 = \mu_2$
+
+$H_A: \mu_1 \neq \mu_2$
+
+t-stat = $\frac{point estimate - 0}{SE}$ = $\frac{6}{5.78}$ = 1.04
+
+p-value: 2 \* p(T \> \|t-value\|) = 0.31
+
+$\alpha$ = 0.01
+
+p-value \> $\alpha$; fail to reject $H_o$
+
+There is not sufficient evidence at the 1% significance level to conclude the mean monthly sale differ between the two designs.
+
+## R Code
+
+```{r}
+qt(1-(.04/2), 36) #problem 1 
+
+pt(-1.887,49) #problem 2 
+
+qt(0.975,15) #problem 3.a
+
+2*(1-pt(1.04,15)) #problem 3.b
+```
