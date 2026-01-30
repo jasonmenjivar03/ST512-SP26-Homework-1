@@ -66,14 +66,20 @@ point estimate: $\hat{\mu_1 - \mu_2}$ = $\bar{y}_1.$ - $\bar{y}_2.$ = 52 - 46 = 
 
 95% CI: ($\bar{y}_1.$ - $\bar{y}_2.$) $\pm$ t\* x SE
 
-SE = $\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$ = $\sqrt{\frac{12^2}{11}+\frac{10^2}{6}}$ = 5.455
+Assuming equal variance:
 
-df = $n_1 + n_2$ - 2 = 15 ; assuming equal variance
+df = $n_1 + n_2$ - 2 = 15
+
+$s_p^2$ = $\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{df}$ = $\frac{10(12^2)+5(10^2)}{15}$ = 129.33
+
+$s_p = \sqrt{129.33}$ = 11.37
+
+SE = $s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}$ = 11.38$\sqrt{\frac{1}{11} + \frac{1}{6}}$ = 5.78
 
 t\* = qt(0.975,15) = 2.13
 
-95% CI: 6 $\pm$ 2.13 \* 5.455
+95% CI: 6 $\pm$ 2.13 \* 5.78
 
-95% CI: (-5.62, 17.62)
+95% CI: (-6.31, 18.31)
 
-
+**b**
