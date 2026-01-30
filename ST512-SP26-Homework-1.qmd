@@ -148,9 +148,48 @@ Our null hypothesis is that the mean phosphorous content does not differ among t
 | **With-in (error)**   | 60   | 7.949  | 0.132 |           |           |
 | **Total**             | 64   | 10.230 |       |           |           |
 
-Based on the ANOVA table, the calculated p-value is approximately 0.0039. The p-value is less than the significance level of 0.01, thus we reject the null hypothesis. Therefore, it appears to be a difference in means between the five diets. 
+Based on the ANOVA table, the calculated p-value is approximately 0.0039. The p-value is less than the significance level of 0.01, thus we reject the null hypothesis. Therefore, it appears to be a difference in means between the five diets.
 
+## Problem 7
 
+**a**
+
+```{r, echo=FALSE}
+isocontent = c(3, 17, 12, 10, 4, 19, 10, 9, 7, 5, 25, 15, 12, 9, 8)
+source = c(rep("1",5),rep("2",5), rep("3",5))
+isoflavone = data.frame(isocontent,source)
+
+group1 <- c(3, 17, 12, 10, 4) # Cereals and Snacks
+group2 <- c(19, 10, 9, 7, 5) # Energy Bars
+group3 <- c(25, 15, 12, 9, 8) # Veggie Burgers
+category <- factor(rep(c("Cereals", "Energy Bars", "Veggie Burgers"), each = 5))
+isoflavones <- c(group1, group2, group3)
+```
+
+```{r}
+tapply(isoflavones,category,length) #verifies sample sizes
+tapply(isoflavones,category,mean) # verifies sample means
+tapply(isoflavones,category,var) # verifies sample variances
+```
+
+**b**
+
+```{r}
+boxplot(isoflavones~category, xlab = "Source of Soy", ylab= "Isoflavone Content (mg)", main = "Distribution of Isoflavone Content by Source of Soy", sub= "Jason Menjivar-Hernandez",frame=TRUE)
+```
+
+Observations:
+
+The cereal data is right-skewed, provided that it had a large upper quartile range. Average isoflavone content due to different source of soy varies (i.e., not equal among the groups). Some of the boxplots appear to be of different sizes, so it is possible that the variances are not the same from group to group, suggesting that the source of soy is associated with isoflavone content.
+
+**c**
+
+```{r}
+model1=aov(isoflavones~category)
+summary(model1)
+```
+
+Based on the above ANOVA table, the p-value is calculated to be 0.46. Using a standard significance level of 0.05, the p-value is larger. Therefore, we fail to reject the null hypothesis. There is no difference in mean isoflavone content between the three sources soy.
 
 ## R Code
 
@@ -182,4 +221,17 @@ summary(anova_model)
 ```{r}
 #problem 6 p-value 
 1-pf(4.32,4,60)
+```
+
+```{r}
+#problem 7 
+isocontent = c(3, 17, 12, 10, 4, 19, 10, 9, 7, 5, 25, 15, 12, 9, 8)
+source = c(rep("1",5),rep("2",5), rep("3",5))
+isoflavone = data.frame(isocontent,source)
+
+group1 <- c(3, 17, 12, 10, 4) # Cereals and Snacks
+group2 <- c(19, 10, 9, 7, 5) # Energy Bars
+group3 <- c(25, 15, 12, 9, 8) # Veggie Burgers
+category <- factor(rep(c("Cereals", "Energy Bars", "Veggie Burgers"), each = 5))
+isoflavones <- c(group1, group2, group3)
 ```
